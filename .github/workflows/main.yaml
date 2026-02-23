@@ -17,7 +17,15 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Grant execute permission
+    - - name: Grant execute permission
+  run: |
+    cd OCRtoQR
+    chmod +x gradlew
+
+- name: Build APK
+  run: |
+    cd OCRtoQR
+    ./gradlew assembleDebug
       run: chmod +x gradlew
 
     - name: Build APK
